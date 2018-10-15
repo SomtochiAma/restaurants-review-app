@@ -78,7 +78,7 @@ initMap = () => {
         scrollWheelZoom: false
       });
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
-    mapboxToken: '<your MAPBOX API KEY HERE>',
+    mapboxToken: 'pk.eyJ1Ijoic29tdG9jaGlhbWEiLCJhIjoiY2puNmY0bWQ3MWJ6ZjN2czBjODBqd2V0ZCJ9.V1q7jUjUaxrRNs4xheYidg',
     maxZoom: 18,
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
       '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -155,12 +155,15 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
 /**
  * Create restaurant HTML.
  */
+
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
-
+  
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  // image.alt = `Image of ${restaurant.name}`;
+  image.setAttribute("alt", `Image of ${restaurant.name}`);
   li.append(image);
 
   const name = document.createElement('h1');
@@ -209,3 +212,16 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 } */
 
+
+
+//code for registering Service Workers
+
+if(navigator.serviceWorker) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function() {
+      console.log("Service Worker registered successfully");
+    }).catch(function(err){
+      console.log("Service Worker registration failed");
+    })
+  })
+}
