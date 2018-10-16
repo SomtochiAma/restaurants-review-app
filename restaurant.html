@@ -22,7 +22,7 @@
     </nav>
     <a href="#restaurant-container" class="skip-link">Skip Map</a>
     <!-- Beginning breadcrumb -->
-    <ul id="breadcrumb" >
+    <ul id="breadcrumb" role="navigation" aria-label="breadcrumb">
       <li><a href="/">Home</a></li>
     </ul>
     <!-- End breadcrumb -->
@@ -34,16 +34,20 @@
   <main id="maincontent">
     <!-- Beginning map -->
     <section id="map-container">
-      <div id="map" aria-label="restaurant map"></div>
+      <div id="map" role="application" aria-label="restaurant map"></div>
     </section>
     <!-- End map -->
     <!-- Beginning restaurant -->
     <section id="restaurant-container">
-      <h1 id="restaurant-name"></h1>
-      <img id="restaurant-img">
-      <p id="restaurant-cuisine"></p>
-      <p id="restaurant-address"></p>
-      <table id="restaurant-hours"></table>
+      <div class="restaurant-info">
+        <h2 id="restaurant-name"></h2>
+        <img id="restaurant-img">
+      </div>
+      <div class="restaurant-info">
+        <p id="restaurant-cuisine"></p>
+        <p id="restaurant-address"></p>
+        <table id="restaurant-hours"></table>
+      <div>
     </section>
     <!-- end restaurant -->
     <!-- Beginning reviews -->

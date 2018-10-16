@@ -224,6 +224,14 @@ a:focus {
   text-transform: uppercase;
 }
 
+#reviews-container h3 {
+  color: #f58500;
+  font-size: 22pt;
+  font-weight: 300;
+  letter-spacing: -1px;
+  padding-bottom: 1pt;
+
+}
 /* ====================== Restaurant Details ====================== */
 .inside header {
   position: fixed;
@@ -321,9 +329,9 @@ a:focus {
 
 /* ================================== CSS Media Queries ===================================== */
 
-@media screen and (min-width: 660px) {
+@media screen and (min-width: 450px) {
   #restaurants-list li {
-    width: 35%;
+    width: 37%;
   }
 
   #select-option {
@@ -337,9 +345,21 @@ a:focus {
   #reviews-list li {
     width: 40%;
   }
-}
+
+  
 
 @media screen and (min-width: 950px) {
+
+  .restaurant-info {
+    width: 50%;
+  }
+
+  #restaurant-container {
+    display: flex;
+    flex-direction: row;
+
+  }
+  
   #restaurants-list li {
     width: 23%;
   }
@@ -347,4 +367,18 @@ a:focus {
   #reviews-list li {
     width: 25%;
   }
+}
+
+@media screen and (min-width: 660px) {
+
+  .restaurant-info {
+    width: 50%;
+  }
+
+  #restaurant-container {
+    display: flex;
+    flex-direction: row;
+
+  }
+}
 }

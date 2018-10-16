@@ -166,7 +166,7 @@ createRestaurantHTML = (restaurant) => {
   image.setAttribute("alt", `Image of ${restaurant.name}`);
   li.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
   li.append(name);
 
@@ -221,7 +221,7 @@ if(navigator.serviceWorker) {
     navigator.serviceWorker.register('/sw.js').then(function() {
       console.log("Service Worker registered successfully");
     }).catch(function(err){
-      console.log("Service Worker registration failed");
+      console.log("Service Worker registration failed" + err);
     })
   })
 }
